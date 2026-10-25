@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3a0b16">
+  <title>The Wedding of Malio &amp; Sera</title>
+
+  <!-- Bootstrap 5 + Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Marcellus&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Library ornamen (SVG) : bunga & daun, dipakai ulang lewat <use> ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="leaf" viewBox="0 0 40 100">
+        <path d="M20 0 C44 28 42 72 20 100 C-2 72 -4 28 20 0Z" style="fill:var(--l,#7f9a7c)"/>
+        <path d="M20 6 L20 92" stroke="rgba(255,255,255,.35)" stroke-width="1.4" fill="none"/>
+      </symbol>
+
+      <symbol id="flower" viewBox="0 0 100 100">
+        <g style="fill:var(--p,#b4394a)">
+          <ellipse cx="50" cy="25" rx="15" ry="24"/>
+          <ellipse cx="50" cy="25" rx="15" ry="24" transform="rotate(72 50 50)"/>
+          <ellipse cx="50" cy="25" rx="15" ry="24" transform="rotate(144 50 50)"/>
+          <ellipse cx="50" cy="25" rx="15" ry="24" transform="rotate(216 50 50)"/>
+          <ellipse cx="50" cy="25" rx="15" ry="24" transform="rotate(288 50 50)"/>
+        </g>
+        <g style="fill:var(--p2,#d9707f)" opacity=".75">
+          <ellipse cx="50" cy="33" rx="8" ry="14" transform="rotate(36 50 50)"/>
+          <ellipse cx="50" cy="33" rx="8" ry="14" transform="rotate(108 50 50)"/>
+          <ellipse cx="50" cy="33" rx="8" ry="14" transform="rotate(180 50 50)"/>
+          <ellipse cx="50" cy="33" rx="8" ry="14" transform="rotate(252 50 50)"/>
+          <ellipse cx="50" cy="33" rx="8" ry="14" transform="rotate(324 50 50)"/>
+        </g>
+        <circle cx="50" cy="50" r="9" fill="#c9a35b"/>
+        <circle cx="46" cy="47" r="1.8" fill="#7a1f2f"/><circle cx="54" cy="48" r="1.8" fill="#7a1f2f"/>
+        <circle cx="50" cy="55" r="1.8" fill="#7a1f2f"/>
+      </symbol>
+
+      <!-- Rangkaian bunga untuk pojok kiri-atas; pojok lain = dicerminkan lewat CSS -->
+      <symbol id="cluster" viewBox="0 0 280 280">
+        <g>
+          <g transform="translate(6 6) rotate(-88)"><use href="#leaf" x="-14" y="0" width="28" height="150" style="--l:#6f8c73"/></g>
+          <g transform="translate(6 6) rotate(-68)"><use href="#leaf" x="-16" y="0" width="32" height="185" style="--l:#86a088"/></g>
+          <g transform="translate(6 6) rotate(-48)"><use href="#leaf" x="-16" y="0" width="32" height="205" style="--l:#6f8c73"/></g>
+          <g transform="translate(6 6) rotate(-28)"><use href="#leaf" x="-16" y="0" width="32" height="180" style="--l:#86a088"/></g>
+          <g transform="translate(6 6) rotate(-8)"><use href="#leaf" x="-14" y="0" width="28" height="145" style="--l:#6f8c73"/></g>
+          <g transform="translate(40 0) rotate(-78)"><use href="#leaf" x="-11" y="0" width="22" height="110" style="--l:#a3b79b"/></g>
+          <g transform="translate(0 40) rotate(-18)"><use href="#leaf" x="-11" y="0" width="22" height="110" style="--l:#a3b79b"/></g>
+        </g>
+        <use href="#flower" x="22" y="22" width="125" height="125" style="--p:#8f2437;--p2:#d9707f"/>
+        <use href="#flower" x="128" y="6" width="82" height="82" style="--p:#c4505f;--p2:#f0a3ab"/>
+        <use href="#flower" x="4" y="128" width="82" height="82" style="--p:#c4505f;--p2:#f0a3ab"/>
+        <use href="#flower" x="102" y="98" width="72" height="72" style="--p:#e8a1a8;--p2:#fbd5d8"/>
+        <use href="#flower" x="182" y="66" width="46" height="46" style="--p:#8f2437;--p2:#d9707f"/>
+        <use href="#flower" x="58" y="186" width="46" height="46" style="--p:#8f2437;--p2:#d9707f"/>
+        <use href="#flower" x="204" y="8" width="36" height="36" style="--p:#e8a1a8;--p2:#fbd5d8"/>
+        <use href="#flower" x="8" y="214" width="36" height="36" style="--p:#e8a1a8;--p2:#fbd5d8"/>
+        <g fill="#c9a35b">
+          <circle cx="170" cy="150" r="4"/><circle cx="182" cy="160" r="3"/><circle cx="158" cy="164" r="3"/>
+          <circle cx="150" cy="182" r="4"/><circle cx="240" cy="70" r="3"/><circle cx="250" cy="82" r="4"/>
+          <circle cx="76" cy="244" r="3"/><circle cx="88" cy="252" r="4"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <noscript><p style="position:fixed;inset:0;z-index:99999;background:#7a1f2f;color:#fff;display:grid;place-items:center;text-align:center;padding:24px;font:16px sans-serif">Undangan ini membutuhkan JavaScript. Buka file index.html langsung di browser (Chrome/Edge/Safari), bukan lewat pratinjau.</p></noscript>
+
+  <div id="app">
+
+    <!-- ================= GATE : cover + gunungan yang terbelah ================= -->
+    <div id="gate">
+      <div class="door l"><div class="door-inner"></div></div>
+      <div class="door r" aria-hidden="true"><div class="door-inner"></div></div>
+      <button id="openBtn" class="btn btn-wine">
+        <i class="bi bi-envelope-heart me-2"></i>Buka Undangan
+      </button>
+    </div>
+
+    <!-- Isi cover (di-clone ke dua pintu oleh JS) -->
+    <template id="coverTpl">
+      <div class="cover-art">
+        <svg class="orn tl" viewBox="0 0 280 280"><use href="#cluster"/></svg>
+        <svg class="orn tr" viewBox="0 0 280 280"><use href="#cluster"/></svg>
+        <svg class="orn bl" viewBox="0 0 280 280"><use href="#cluster"/></svg>
+        <svg class="orn br" viewBox="0 0 280 280"><use href="#cluster"/></svg>
+
+        <div class="gunungan">
+          <div class="gun-svg"></div>
+          <div class="cover-text">
+            <p class="eyebrow">The Wedding Of</p>
+            <h1 class="names script">
+              <span data-bind="groom.nick"></span>
+              <em>&amp;</em>
+              <span data-bind="bride.nick"></span>
+            </h1>
+            <p class="dear">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <p class="guest" data-guest>Tamu Undangan</p>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ================= STAGE : pemandangan + zoom ================= -->
+    <main id="stage" data-scene="0">
+
+      <div id="camera">
+        <div id="world">
+          <img id="sceneImg" alt="">
+          <div class="world-shade"></div>
+        </div>
+      </div>
+
+      <!-- efek: ornamen pojok, kupu-kupu, kelopak -->
+      <div id="fx">
+       <div id="petals"></div>
+      </div>
+
+      <!-- ============ PANEL (kartu lengkung) PER SCENE ============ -->
+      <div id="panels">
+
+        <!-- 0 : Pembuka -->
+        <section class="panel arch center" data-scene="0">
+          <p class="mono script" data-bind="monogram"></p>
+          <p class="eyebrow">The Wedding Of</p>
+          <h2 class="title big">
+            <span data-bind="groom.nick"></span> <i>&amp;</i> <span data-bind="bride.nick"></span>
+          </h2>
+          <p class="date-line" data-bind="dateShort"></p>
+          <div class="divider"><i class="bi bi-flower1"></i></div>
+          <p class="quote" data-bind="quote.text"></p>
+          <p class="quote-src" data-bind="quote.source"></p>
+          <p class="body-text" data-bind="intro"></p>
+          <button class="btn btn-wine mt-2 align-self-center" data-next>
+            Memasuki Kisah Bahagia Kami <i class="bi bi-chevron-double-down ms-1"></i>
+          </button>
+        </section>
+
+        <!-- 1 : Mempelai -->
+        <section class="panel arch" data-scene="1">
+          <p class="eyebrow">Bismillahirrahmanirrahim</p>
+          <h3 class="title">Mempelai</h3>
+          <p class="body-text" data-bind="mempelaiIntro"></p>
+          <div class="persons">
+            <div class="person">
+              <div class="arch-photo" style="--img:url('images/Foto malio.jpeg')"></div>
+              <h4 class="script nick" data-bind="groom.nick"></h4>
+              <p class="full" data-bind="groom.full"></p>
+              <p class="sub" data-bind="groom.parents"></p>
+            </div>
+            <div class="person">
+              <div class="arch-photo" style="--img:url('images/Foto sera.jpeg')"></div>
+              <h4 class="script nick" data-bind="bride.nick"></h4>
+              <p class="full" data-bind="bride.full"></p>
+              <p class="sub" data-bind="bride.parents"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 : Akad -->
+        <section class="panel arch" data-scene="2">
+          <p class="eyebrow">Akad Nikah</p>
+          <h3 class="title">Janji Suci</h3>
+          <div class="event-date">
+            <span class="day" data-bind="akad.day"></span>
+            <span class="num" data-bind="akad.num"></span>
+            <span class="mon" data-bind="akad.month"></span>
+          </div>
+          <p class="time"><i class="bi bi-clock me-1"></i><span data-bind="akad.time"></span></p>
+          <div class="divider"><i class="bi bi-geo-alt-fill"></i></div>
+          <p class="place" data-bind="akad.place"></p>
+          <p class="addr" data-bind="akad.address"></p>
+          <div class="d-flex gap-2 justify-content-center flex-wrap">
+            <a class="btn btn-wine btn-sm" target="_blank" rel="noopener" data-href="akad.maps"><i class="bi bi-map me-1"></i>Lihat Lokasi</a>
+            <a class="btn btn-line btn-sm" target="_blank" rel="noopener" data-cal="akad"><i class="bi bi-calendar-plus me-1"></i>Simpan Tanggal</a>
+          </div>
+        </section>
+
+        <!-- 3 : Resepsi -->
+        <section class="panel arch" data-scene="3">
+          <p class="eyebrow">Resepsi</p>
+          <h3 class="title">Pesta Kebahagiaan</h3>
+          <div class="event-date">
+            <span class="day" data-bind="resepsi.day"></span>
+            <span class="num" data-bind="resepsi.num"></span>
+            <span class="mon" data-bind="resepsi.month"></span>
+          </div>
+          <p class="time"><i class="bi bi-clock me-1"></i><span data-bind="resepsi.time"></span></p>
+
+          <div class="cd-row" id="countdown">
+            <div class="cd-box"><b id="cdD">0</b><small>Hari</small></div>
+            <div class="cd-box"><b id="cdH">0</b><small>Jam</small></div>
+            <div class="cd-box"><b id="cdM">0</b><small>Menit</small></div>
+            <div class="cd-box"><b id="cdS">0</b><small>Detik</small></div>
+          </div>
+
+          <p class="place" data-bind="resepsi.place"></p>
+          <p class="addr" data-bind="resepsi.address"></p>
+          <div class="d-flex gap-2 justify-content-center flex-wrap">
+            <a class="btn btn-wine btn-sm" target="_blank" rel="noopener" data-href="resepsi.maps"><i class="bi bi-map me-1"></i>Lihat Lokasi</a>
+            <a class="btn btn-line btn-sm" target="_blank" rel="noopener" data-cal="resepsi"><i class="bi bi-calendar-plus me-1"></i>Simpan Tanggal</a>
+          </div>
+        </section>
+
+        <!-- 4 : Kisah + galeri -->
+        <section class="panel arch" data-scene="4">
+          <p class="eyebrow">Our Story</p>
+          <h3 class="title">Kisah Kami</h3>
+          <div id="story" class="timeline"></div>
+
+          <h3 class="title sm mt-3">Our Gallery</h3>
+          <div class="prewedding-gallery">
+            <img src="images/pre-wedding1.jpeg" alt="Foto prewedding 1">
+            <img src="images/lamaran.jpeg" alt="Foto lamaran">
+            <img src="images/pre-wedding2.jpeg" alt="Foto prewedding 2">
+          </div>
+        </section>
+
+        <!-- 5 : Live streaming + gift -->
+        <section class="panel arch" data-scene="5">
+          <p class="eyebrow">Live Streaming</p>
+          <h3 class="title">Hadir Secara Virtual</h3>
+          <p class="body-text">Bagi yang berhalangan hadir, kami mengundang Anda menyaksikan acara pernikahan kami secara daring.</p>
+          <p class="time"><i class="bi bi-broadcast me-1"></i><span data-bind="live.time"></span></p>
+          <a class="btn btn-wine btn-sm align-self-center" target="_blank" rel="noopener" data-href="live.url"><i class="bi bi-play-circle me-1"></i>Tonton Siaran</a>
+
+          <div class="divider my-3"><i class="bi bi-gift"></i></div>
+
+          <h3 class="title sm">Wedding Gift</h3>
+          <p class="body-text">Doa restu Anda adalah karunia terbesar bagi kami. Jika berkenan memberi tanda kasih, dapat disalurkan melalui:</p>
+          <button class="btn btn-line btn-sm align-self-center" data-bs-toggle="collapse" data-bs-target="#giftBox">
+            <i class="bi bi-arrow-right me-1"></i>Klik di sini
+          </button>
+          <div id="giftBox" class="collapse mt-3">
+            <div id="gifts"></div>
+            <div class="gift-card">
+              <p class="bank"><i class="bi bi-box2-heart me-1"></i>Kirim Hadiah</p>
+              <p class="mb-0" data-bind="giftAddress.name"></p>
+              <p class="mb-0" data-bind="giftAddress.phone"></p>
+              <p class="mb-0 small" data-bind="giftAddress.address"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6 : RSVP / ucapan + penutup -->
+        <section class="panel arch" data-scene="6">
+          <p class="eyebrow">Wishes</p>
+          <h3 class="title">Konfirmasi &amp; Doa</h3>
+          <p class="body-text">Konfirmasi kehadiran dan berikan ucapan harapan serta doa untuk kedua mempelai.</p>
+
+          <form id="rsvpForm" class="text-start">
+            <input class="form-control mb-2" id="rsvpName" placeholder="Nama" required>
+            <div class="rsvp-row mb-2">
+              <select class="form-select" id="rsvpStatus" aria-label="Kehadiran">
+                <option>Hadir</option>
+                <option>Berhalangan Hadir</option>
+                <option>Menyusul</option>
+              </select>
+              <input type="number" min="1" max="10" value="1" class="form-control" id="rsvpCount" aria-label="Jumlah tamu">
+            </div>
+            <textarea class="form-control mb-2" id="rsvpMsg" rows="3" placeholder="Ucapan &amp; doa"></textarea>
+            <button class="btn btn-wine w-100"><i class="bi bi-whatsapp me-2"></i>Kirim via WhatsApp</button>
+          </form>
+
+          <div class="divider my-3"><i class="bi bi-heart-fill"></i></div>
+          <p class="body-text mb-1">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+          <p class="body-text mb-1">Atas doa &amp; restunya, kami ucapkan terima kasih.</p>
+          <p class="title">
+            <span data-bind="groom.nick"></span> <i>&amp;</i> <span data-bind="bride.nick"></span>
+          </p>
+        </section>
+
+      </div>
+
+      <nav id="dots" aria-label="Navigasi bagian"></nav>
+      <button id="musicBtn" aria-label="Musik"><i class="bi bi-music-note-beamed"></i></button>
+
+      <!-- Toast Bootstrap -->
+      <div class="toast-wrap">
+        <div id="copyToast" class="toast align-items-center border-0" role="status" aria-live="polite" aria-atomic="true">
+          <div class="d-flex"><div class="toast-body" id="toastText">Tersalin</div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- GANTI: lagu latar -->
+  <audio id="bgm" loop preload="auto">
+    <source src="images/SAMPAI JADI DEBU - Banda Naira (Lyrics).mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
